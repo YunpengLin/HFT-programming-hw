@@ -13,10 +13,12 @@ Assume the Snapshot data has the following format:
 | --- | --- |
 | bid | num_of_bids |
 | bid_price_1 | bid_quantity_1 |
-| bid_price_2 | bid_quantity_2 |
+| ... | ... |
+| bid_price_n | bid_quantity_n |
 | ask | num_of_asks |
 | ask_price_1 | bid_quantity_1 |
-| ask_price_2 | bid_quantity_2 |
+| ... | ... |
+| ask_price_m | bid_quantity_m |
 
 The program selects the highest bid price and the lowest ask price as the best bid and best ask. It reads every level, but the metrics below use only the prices and quantities at those two best levels.
 
