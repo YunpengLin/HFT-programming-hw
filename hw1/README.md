@@ -6,6 +6,15 @@ This assignment reads a sequence of order book snapshots and calculates four top
 
 Each snapshot contains a timestamp, a `bids` section, and an `asks` section. Each section starts with its number of price levels, followed by one `price quantity` pair per level. The sample file has **11 bid levels and 11 ask levels in each snapshot**. These rows represent price levels, not individually identified orders.
 
+Assume the Snapshot data has the following format:
+
+| snapshot | timestamp |
+| bid | num_of_bids |
+| bid_price_1 | bid_quantity_1 |
+
+| ask | num_of_asks |
+| ask_price_1 | bid_quantity_1 |
+
 The program selects the highest bid price and the lowest ask price as the best bid and best ask. It reads every level, but the metrics below use only the prices and quantities at those two best levels.
 
 ## Metrics
