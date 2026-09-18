@@ -16,7 +16,7 @@ Assume the Snapshot data has the following format:
 | ... | ... |
 | bid_price_n | bid_quantity_n |
 | ask | num_of_asks |
-| ask_price_1 | bid_quantity_1 |
+| ask_price_1 | ask_quantity_1 |
 | ... | ... |
 | ask_price_m | ask_quantity_m |
 
