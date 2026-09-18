@@ -8,6 +8,7 @@ Each snapshot contains a timestamp, a `bids` section, and an `asks` section. Eac
 
 Assume the Snapshot data has the following format:
 
+| --- | --- |
 | snapshot | timestamp |
 | bid | num_of_bids |
 | bid_price_1 | bid_quantity_1 |
