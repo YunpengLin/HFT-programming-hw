@@ -132,6 +132,7 @@ void swap_ref(int& a, int& b) {
 /// the caller. That is the classic wrong answer and it scores 0 for this part.
 void swap_ptr(int* a, int* b) {
     // TODO(1b): swap the two pointed-to values.
+    if (a == nullptr || b == nullptr) return;  // handle null pointers gracefully
     int t = *a; *a = *b; *b = t;
 }
 
