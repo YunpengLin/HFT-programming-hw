@@ -2,9 +2,9 @@
 
 ## 1. Machine and Build Information
 
-- CPU: `[TODO: CPU model and core count]`
-- RAM: `[TODO: RAM size]`
-- OS: `[TODO: operating system and version]`
+- CPU: `AMD Ryzen 9 9955HX 16-Core Processor, 16 physical cores, 32 logical CPUs`
+- RAM: `7.3 GiB`
+- OS: `Ubuntu 26.04 LTS running under WSL2`
 - Compiler: `g++ 15.2.0`
 - Language standard: `C++17`
 - Compiler flags: `-std=c++17 -O2 -Wall`
