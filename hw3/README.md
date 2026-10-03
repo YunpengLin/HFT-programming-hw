@@ -9,49 +9,6 @@ This submission contains four C++ source files and this README. Parts 1-3 are se
 | `hw3part3.cpp` | Raw/unique/shared dereference and shared ownership copy benchmark |
 | `hw3part4.cpp` | Pool allocation and object-lifetime sketch |
 
-## Build and reproduce
-
-Run these commands in a Linux/WSL terminal from the directory containing this
-README. The recorded run used `g++-15`; use a C++17-capable GCC installation if
-that compiler name is unavailable. Do not define `NDEBUG`, since Part 2 uses
-assertions. Part 3 uses the GCC/Clang assembly barrier from the starter's timer.
-
-```bash
-mkdir -p build
-
-# Correctness runs: no optimization, debugging information, ASan and UBSan.
-g++-15 -std=c++17 -O0 -g -Wall -Wextra -Wpedantic \
-  -fsanitize=address,undefined -fno-omit-frame-pointer \
-  hw3part1.cpp -o build/part1_check
-g++-15 -std=c++17 -O0 -g -Wall -Wextra -Wpedantic \
-  -fsanitize=address,undefined -fno-omit-frame-pointer \
-  hw3part2.cpp -o build/part2_check
-
-export ASAN_OPTIONS=detect_leaks=1:halt_on_error=1
-export UBSAN_OPTIONS=halt_on_error=1
-
-# Intentional negative control: expected exit status 1 and a 16-byte leak report.
-./build/part1_check raw
-
-# These runs should each exit 0 without sanitizer diagnostics.
-./build/part1_check unique
-./build/part1_check guard
-./build/part1_check fixed
-./build/part2_check
-
-# Part 4 is a comment-only sketch; there is no main or concrete Pool to link.
-g++-15 -std=c++17 -Wall -Wextra -Wpedantic -fsyntax-only hw3part4.cpp
-
-# Timing run: optimized and without sanitizer instrumentation.
-unset ASAN_OPTIONS UBSAN_OPTIONS
-g++-15 -std=c++17 -O2 -Wall -Wextra -Wpedantic -pthread \
-  hw3part3.cpp -o build/part3_bench
-./build/part3_bench
-```
-
-The raw negative-control command intentionally fails; if reproducing the whole
-block in a script with `set -e`, handle that command's expected status separately.
-The default Part 1 mode is `fixed`, so running it without arguments is leak-free.
 
 ## Platform and tools
 
