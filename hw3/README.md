@@ -1,19 +1,13 @@
 # HW3: Memory Management, Smart Pointers, and RAII
 
-Assignment: [Week 3 lab, "Your turn" tasks 1-4](https://github.com/sdonadio/hft-cpp-starter-columbia/blob/main/labs/week03.md#your-turn).
-
-This submission contains four C++ source files and this README. All code comments
-and documentation are in English. Parts 1-3 are separate executables, each with
-its own `main`; do not link them together. Part 4 is a comment-only pool sketch,
-as permitted by the assignment. No extra headers or starter-repository files are
-needed to build the submission.
+This submission contains four C++ source files and this README. Parts 1-3 are separate executables, each with its own `main`. Part 4 is a comment-only pool sketch.
 
 | File | Assignment task |
 | --- | --- |
 | `hw3part1.cpp` | Intentional raw-pointer leak, `unique_ptr` fix, custom RAII guard |
 | `hw3part2.cpp` | Rule of Three and a `unique_ptr<double[]>` rewrite with checks |
 | `hw3part3.cpp` | Raw/unique/shared dereference and shared ownership copy benchmark |
-| `hw3part4.cpp` | Pool allocation and object-lifetime sketch in English comments |
+| `hw3part4.cpp` | Pool allocation and object-lifetime sketch |
 
 ## Build and reproduce
 
