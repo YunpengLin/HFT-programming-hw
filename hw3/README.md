@@ -12,7 +12,7 @@ This submission contains four C++ source files and this README. Parts 1-3 are se
 
 ## Platform and tools
 
-Verified on October 3, 2026 (America/New_York):
+Verified on October 3, 2026:
 
 - CPU: AMD Ryzen 9 9955HX 16-Core Processor, 32 logical CPUs.
 - Host/execution environment: Windows host, Ubuntu 26.04 LTS under WSL2.
