@@ -13,6 +13,10 @@ bash run_hw4.sh
 
 The script compiles and runs the pool tests, allocator benchmark, polymorphism example, sanitizer check, and dispatch benchmark, and generates assembly. It writes logs to `results/` and executables to `build/`. The supplied `tests/bench.hpp` and `tests/pool_test.cpp` are course helpers included unchanged for reproducibility.
 
+### GitHub Actions
+
+The repository workflow `.github/workflows/hw4.yml` compiles `include/pool.hpp` against the course Pool test driver on pushes to `main` and pull requests targeting `main`. It can also be started manually. The job fails if any of `pool_basic`, `pool_full`, `pool_reuse`, or `pool_pattern` is not reported as passing, even if the test executable exits with code zero. The Actions Summary displays all four test results and the `pool_ns_per_op` metric. Open the repository's **Actions** tab, select **HW4 Pool CI**, and open a run to view its summary and logs. CI timings are separate from the local measurements below.
+
 ## 1. Free-list pool
 
 `include/pool.hpp` allocates one buffer during construction. Free slots store a next pointer inside their own storage. Allocation removes the head, and reclamation inserts a slot at the head; each performs constant work independent of capacity.

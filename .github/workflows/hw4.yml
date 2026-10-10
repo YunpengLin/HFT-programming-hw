@@ -1,0 +1,79 @@
+name: HW4 Pool CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pool:
+    name: Official Pool tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: bash
+        working-directory: hw4
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Compile the course test driver
+        run: |
+          mkdir -p build
+          g++ --version
+          g++ -std=c++17 -O2 -Wall -Wextra -Iinclude -Itests tests/pool_test.cpp -o build/pool_ci
+
+      - name: Run and validate all four tests
+        run: |
+          set -euo pipefail
+          ./build/pool_ci | tee build/pool_ci.log
+          for check in pool_basic pool_full pool_reuse pool_pattern; do
+            grep -q "^RESULT|${check}|pass|" build/pool_ci.log
+          done
+          grep -q '^METRIC|pool_ns_per_op|' build/pool_ci.log
+
+      - name: Publish test results and metric
+        if: always()
+        run: |
+          {
+            echo '## HW4 Pool CI'
+            echo
+            echo 'Compiler: C++17, g++, -O2 on a GitHub-hosted Ubuntu runner.'
+            echo
+            if [ -f build/pool_ci.log ]; then
+              echo '| Test | Result |'
+              echo '| --- | --- |'
+              passed=0
+              for check in pool_basic pool_full pool_reuse pool_pattern; do
+                if grep -q "^RESULT|${check}|pass|" build/pool_ci.log; then
+                  echo "| ${check} | PASS |"
+                  passed=$((passed + 1))
+                else
+                  echo "| ${check} | FAIL or missing |"
+                fi
+              done
+              echo
+              if [ "$passed" -eq 4 ]; then
+                metric=$(awk -F'|' '$1 == "METRIC" && $2 == "pool_ns_per_op" {print $3; exit}' build/pool_ci.log)
+                echo "**Pool alloc/free pair: ${metric:-unavailable} ns/op**"
+              else
+                echo 'The performance metric is not valid until all four correctness tests pass.'
+              fi
+              echo
+              echo '```text'
+              cat build/pool_ci.log
+              echo '```'
+            else
+              echo 'No test output was produced. Inspect the checkout or compile step for the error.'
+            fi
+            echo
+            echo 'CI timing is runner-dependent and is separate from the submitted local benchmark tables.'
+          } >> "$GITHUB_STEP_SUMMARY"
