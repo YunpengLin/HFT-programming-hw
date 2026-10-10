@@ -1,6 +1,5 @@
 # HW4 — Allocators and Runtime Polymorphism
 
-Author: YunpengLin
 
 ## Environment and reproduction
 
