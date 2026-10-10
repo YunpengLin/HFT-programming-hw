@@ -1,0 +1,5 @@
+RESULT|pool_basic|pass|4 distinct, writable, non-overlapping slots
+RESULT|pool_full|pass|3 distinct slots, then alloc past capacity -> null
+RESULT|pool_reuse|pass|freed slot reused
+RESULT|pool_pattern|pass|100k fill/drain rounds OK
+METRIC|pool_ns_per_op|1.05197

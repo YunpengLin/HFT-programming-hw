@@ -1,0 +1,4 @@
+live objects after construction: 2
+signal = +0.0080
+signal = +100.4100
+live objects after teardown: 0
