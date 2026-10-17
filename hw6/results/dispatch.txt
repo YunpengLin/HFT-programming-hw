@@ -1,0 +1,7 @@
+direct call (no base class)      1.45 ns/call
+virtual, 1 target                6.20 ns/call
+virtual, 4 targets, i&3          6.28 ns/call
+virtual, 4 targets, random      20.52 ns/call
+final class, via VS0*            1.58 ns/call
+CRTP, known S0 type             2.09 ns/call
+sink=1.078e+06

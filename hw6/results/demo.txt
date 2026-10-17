@@ -1,0 +1,7 @@
+CRTP S0=0.0080 S1=100.4100 S2=-0.3800 S3=100.1600
+tick_table[50]=100.50
+quote edges=0.0095, 0.0087
+BookUpdate mid=100.00 obi=0.80
+Fill price=100.10 quantity=3
+SessionEvt code=1
+Cancel id=12345

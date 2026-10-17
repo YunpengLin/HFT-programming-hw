@@ -1,0 +1,15 @@
+Selected instructions from `g++ -std=c++20 -O2 -S -fverbose-asm dispatch_bench.cpp`
+on the machine documented in cpu.txt. See run_hw6.sh to regenerate the full .s file.
+
+crtp_probe:
+    subsd   %xmm0, %xmm1
+    mulsd   %xmm2, %xmm1
+    movapd  %xmm1, %xmm0
+    ret
+
+virtual_probe:
+    movq    (%rdi), %rax
+    jmp     *16(%rax)
+
+Timed virtual loop:
+    call    *16(%rax)

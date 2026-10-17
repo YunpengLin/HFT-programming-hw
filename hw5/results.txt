@@ -1,0 +1,7 @@
+prices: 100, 101, 100, 102, 101, 103
+simple return = current / previous - 1; rolling window = 3
+end_price  return      mean        median      population_stddev
+   102.00   +0.020000   +0.006700   +0.010000  0.012428
+   101.00   -0.009804   +0.000098   -0.009804  0.014073
+   103.00   +0.019802   +0.009999   +0.019802  0.014003
+sum(1,2,3,4)=10; sum(1,2.5,3)=6.5
