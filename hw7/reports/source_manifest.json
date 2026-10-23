@@ -1,0 +1,19 @@
+{
+  "header_sha256": {
+    "before": "dd7194db8079cd67b2b0ae7d8908ff894578dbcacdf58268239fc9077b26ba5a",
+    "after": "86825a356f079fd75df26afcdf3b082a82a9ba57fd00cb32c9d6854e88333588"
+  },
+  "course_file_blob_sha": {
+    "tests/book_test.cpp": "04dc3ec9971e897a2d09edaac31b27dbc742d2d9",
+    "tests/bench.hpp": "746fe762165199a9773a470fbd5fa62669cd5091"
+  },
+  "query_measurement": {
+    "samples_per_run": 31,
+    "ops_per_sample": 200000,
+    "warmup_ops": 20000,
+    "program_runs": 2,
+    "symbols": 8,
+    "hit_rate": 1.0,
+    "resting_orders": 1024
+  }
+}

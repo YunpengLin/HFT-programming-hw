@@ -1,0 +1,97 @@
+{
+  "header_sha256": "dd7194db8079cd67b2b0ae7d8908ff894578dbcacdf58268239fc9077b26ba5a",
+  "lookups_run1": {
+    "Book.best_bid": {
+      "ns": 0.995235,
+      "ticks": 2.48225,
+      "ops_per_second": 1004787813.9333926
+    },
+    "map.best_bid": {
+      "ns": 2.984195,
+      "ticks": 7.44525,
+      "ops_per_second": 335098745.2227485
+    },
+    "Book.best_ask": {
+      "ns": 0.99458,
+      "ticks": 2.480625,
+      "ops_per_second": 1005449536.4877636
+    },
+    "map.best_ask": {
+      "ns": 0.870695,
+      "ticks": 2.17125,
+      "ops_per_second": 1148507801.23924
+    },
+    "Book.BBO": {
+      "ns": 2.081385,
+      "ticks": 5.192,
+      "ops_per_second": 480449316.2005107
+    },
+    "map.BBO": {
+      "ns": 3.079075,
+      "ticks": 7.68025,
+      "ops_per_second": 324772861.979653
+    },
+    "SymMap.get": {
+      "ns": 10.85884,
+      "ticks": 27.092625,
+      "ops_per_second": 92090867.90117544
+    },
+    "unordered_map.find(string)": {
+      "ns": 10.84061,
+      "ticks": 27.0475,
+      "ops_per_second": 92245731.55938642
+    },
+    "unordered_map.find(c_str)": {
+      "ns": 23.0698,
+      "ticks": 57.562625,
+      "ops_per_second": 43346713.018751785
+    }
+  },
+  "lookups_run2": {
+    "Book.best_bid": {
+      "ns": 0.99418,
+      "ticks": 2.47975,
+      "ops_per_second": 1005854070.6914241
+    },
+    "map.best_bid": {
+      "ns": 2.982695,
+      "ticks": 7.441625,
+      "ops_per_second": 335267266.68331826
+    },
+    "Book.best_ask": {
+      "ns": 0.99448,
+      "ticks": 2.480375,
+      "ops_per_second": 1005550639.5302067
+    },
+    "map.best_ask": {
+      "ns": 0.870445,
+      "ticks": 2.170875,
+      "ops_per_second": 1148837663.49396
+    },
+    "Book.BBO": {
+      "ns": 1.98776,
+      "ticks": 4.958875,
+      "ops_per_second": 503078842.5161992
+    },
+    "map.BBO": {
+      "ns": 3.06725,
+      "ticks": 7.65225,
+      "ops_per_second": 326024940.9079794
+    },
+    "SymMap.get": {
+      "ns": 11.054615,
+      "ticks": 27.581375,
+      "ops_per_second": 90459957.22148623
+    },
+    "unordered_map.find(string)": {
+      "ns": 10.95483,
+      "ticks": 27.332375,
+      "ops_per_second": 91283935.94423647
+    },
+    "unordered_map.find(c_str)": {
+      "ns": 22.12827,
+      "ticks": 55.213125,
+      "ops_per_second": 45191061.027364545
+    }
+  }
+}

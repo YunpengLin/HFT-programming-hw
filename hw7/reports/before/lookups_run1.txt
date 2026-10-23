@@ -1,0 +1,19 @@
+31 samples/query; 20000 warm-up ops; 200000 timed ops/sample
+Book: 1024 resting orders after add/cancel churn, 256 levels/side
+Symbols: course's 8 keys, cyclic queries, 100% hit, setup excluded
+cycles/op = TSC ticks/op, not actual dynamically clocked core cycles
+Numbers include loop, volatile pointer reload and result barrier overhead
+query                                     ns/op     cycles/op             ops/s
+Book.best_bid                             0.995         2.482        1004787814
+map.best_bid                              2.984         7.445         335098745
+Book.best_ask                             0.995         2.481        1005449536
+map.best_ask                              0.871         2.171        1148507801
+Book.BBO                                  2.081         5.192         480449316
+map.BBO                                   3.079         7.680         324772862
+SymMap.get                               10.859        27.093          92090868
+unordered_map.find(string)               10.841        27.047          92245732
+unordered_map.find(c_str)                23.070        57.563          43346713
+best_bid speedup (map/student): 2.998x
+BBO speedup (map/student): 1.479x
+get speedup (existing string/student): 0.998x
+get speedup (c_str conversion/student): 2.125x

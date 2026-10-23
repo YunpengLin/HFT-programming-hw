@@ -1,0 +1,4 @@
+RESULT|book_bbo|pass|best bid/ask + cancel correct
+RESULT|symmap|pass|put/get/overwrite/absent correct
+METRIC|book_bbo_ns_per_op|2.15432
+METRIC|symmap_get_ns_per_op|10.1307

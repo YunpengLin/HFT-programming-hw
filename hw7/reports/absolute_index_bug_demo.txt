@@ -1,0 +1,6 @@
+g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+Flags: -std=c++20 -O0 -g -fsanitize=address,undefined
+tests/absolute_index_bug_demo.cpp:13:27: runtime error: index 71998 out of bounds for type 'unsigned int [65536]'
+tests/absolute_index_bug_demo.cpp:13:27: runtime error: index 71998 out of bounds for type 'unsigned int [65536]'
+Before: ask at 64.62 = 10
+After: ask at 64.62 = 20

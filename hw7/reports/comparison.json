@@ -1,0 +1,93 @@
+{
+  "before": {
+    "Book.best_bid": {
+      "ns": 0.9948075000000001,
+      "ticks": 2.481125
+    },
+    "map.best_bid": {
+      "ns": 2.983745,
+      "ticks": 7.444125
+    },
+    "Book.best_ask": {
+      "ns": 0.9945075,
+      "ticks": 2.4805
+    },
+    "map.best_ask": {
+      "ns": 0.8705475,
+      "ticks": 2.1711875000000003
+    },
+    "Book.BBO": {
+      "ns": 1.9901425000000001,
+      "ticks": 4.96475
+    },
+    "map.BBO": {
+      "ns": 3.07557,
+      "ticks": 7.671875
+    },
+    "SymMap.get": {
+      "ns": 10.97579,
+      "ticks": 27.384875
+    },
+    "unordered_map.find(string)": {
+      "ns": 10.882942499999999,
+      "ticks": 27.1531875
+    },
+    "unordered_map.find(c_str)": {
+      "ns": 22.57654,
+      "ticks": 56.33125
+    }
+  },
+  "after": {
+    "Book.best_bid": {
+      "ns": 0.995285,
+      "ticks": 2.4820625
+    },
+    "map.best_bid": {
+      "ns": 3.1168,
+      "ticks": 7.774625
+    },
+    "Book.best_ask": {
+      "ns": 0.99556,
+      "ticks": 2.4829375000000002
+    },
+    "map.best_ask": {
+      "ns": 0.995785,
+      "ticks": 2.483625
+    },
+    "Book.BBO": {
+      "ns": 2.0832949999999997,
+      "ticks": 5.195125
+    },
+    "map.BBO": {
+      "ns": 3.1257400000000004,
+      "ticks": 7.796875
+    },
+    "SymMap.get": {
+      "ns": 9.35793,
+      "ticks": 23.347749999999998
+    },
+    "unordered_map.find(string)": {
+      "ns": 11.0825675,
+      "ticks": 27.6514375
+    },
+    "unordered_map.find(c_str)": {
+      "ns": 23.27847,
+      "ticks": 58.083124999999995
+    }
+  },
+  "header_sha256": {
+    "before": "dd7194db8079cd67b2b0ae7d8908ff894578dbcacdf58268239fc9077b26ba5a",
+    "after": "86825a356f079fd75df26afcdf3b082a82a9ba57fd00cb32c9d6854e88333588"
+  },
+  "largest_course_variation": {
+    "N": 16384,
+    "structure": "1a vector (unsorted)",
+    "metric": "bbo",
+    "percent": 23.166328467093326
+  },
+  "largest_student_variation": {
+    "N": 64,
+    "metric": "add",
+    "percent": 3.1189083820662797
+  }
+}

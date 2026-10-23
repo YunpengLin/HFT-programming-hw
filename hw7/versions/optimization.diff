@@ -1,0 +1,39 @@
+--- versions/order_book_before.hpp
++++ order_book.hpp
+@@ -10,7 +10,7 @@
+ #include <unordered_map>
+ #include <vector>
+ 
+-// Week 7 fill-in-the-blank exercise. The exercise uses the same public interface.
++// HW7: flat price-indexed Book and open-addressing SymMap.
+ // Prices are nonnegative, on a $0.01 grid, and fit in an int tick.
+ // Duplicate order ids replace the old order. Invalid inputs are ignored.
+ struct Book {
+@@ -120,8 +120,6 @@
+     }
+ };
+ 
+-// The staged Book exercise can be checked before SymMap is filled in.
+-
+ struct SymMap {
+ private:
+     static constexpr std::size_t MAX_KEY = 16;
+@@ -196,14 +194,16 @@
+             i = find_slot(sym); // the hash position changed with capacity
+         }
+         // [28] Copy the terminator too; key storage has 17 bytes.
+-        std::strncpy(slots_[i].key.data(), sym, MAX_KEY + 1);
++        std::memcpy(slots_[i].key.data(), sym, std::strlen(sym) + 1);
+         slots_[i].id = id;
+         slots_[i].used = true;
+         ++size_;
+     }
+ 
+     std::uint64_t get(const char* sym) const {
+-        if (!valid_key(sym)) return ABSENT;
++        // put() validates stored keys. Full key comparison rejects longer inputs;
++        // avoid a separate length scan before hashing each lookup.
++        if (!sym) return ABSENT;
+         const std::size_t i = find_slot(sym);
+         // [29] An unused slot ends an unsuccessful search.
+         if (i == slots_.size() || !slots_[i].used) return  ABSENT;

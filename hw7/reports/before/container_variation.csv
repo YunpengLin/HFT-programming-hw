@@ -1,0 +1,148 @@
+N,structure,metric,run1,run2,change_percent
+64,1a vector (unsorted),add,18.7,18.8,0.5347593582887776
+64,1a vector (unsorted),cancel,11.9,11.2,-5.88235294117648
+64,1a vector (unsorted),bbo,86.87,84.69,-2.509496949464725
+64,1a vector (unsorted),add_p50,19.7,19.7,0.0
+64,1a vector (unsorted),add_p99,21.0,21.0,0.0
+64,1a vector (unsorted),cancel_p50,16.9,16.9,0.0
+64,1a vector (unsorted),cancel_p99,17.9,17.6,-1.6759776536312692
+64,1b vector (sorted by price),add,15.7,14.4,-8.280254777070057
+64,1b vector (sorted by price),cancel,14.7,14.8,0.6802721088435472
+64,1b vector (sorted by price),bbo,0.95,0.91,-4.210526315789466
+64,1b vector (sorted by price),add_p50,15.0,14.7,-2.000000000000005
+64,1b vector (sorted by price),add_p99,19.4,21.6,11.340206185567025
+64,1b vector (sorted by price),cancel_p50,20.0,20.0,0.0
+64,1b vector (sorted by price),cancel_p99,23.2,21.6,-6.896551724137922
+64,"2  list + unordered_map<id,it>",add,63.0,63.2,0.317460317460322
+64,"2  list + unordered_map<id,it>",cancel,50.1,49.4,-1.397205588822361
+64,"2  list + unordered_map<id,it>",bbo,204.43,204.23,-0.09783299907059485
+64,"2  list + unordered_map<id,it>",add_p50,63.6,61.7,-2.9874213836477965
+64,"2  list + unordered_map<id,it>",add_p99,95.8,89.8,-6.263048016701462
+64,"2  list + unordered_map<id,it>",cancel_p50,55.1,53.8,-2.3593466424682474
+64,"2  list + unordered_map<id,it>",cancel_p99,71.4,71.7,0.42016806722688677
+64,"3  map<tick,Level> + umap (no reserve)",add,79.3,79.2,-0.12610340479192222
+64,"3  map<tick,Level> + umap (no reserve)",cancel,67.4,66.1,-1.9287833827893341
+64,"3  map<tick,Level> + umap (no reserve)",bbo,2.68,2.69,0.373134328358201
+64,"3  map<tick,Level> + umap (no reserve)",add_p50,80.2,80.2,0.0
+64,"3  map<tick,Level> + umap (no reserve)",add_p99,194.4,174.4,-10.288065843621398
+64,"3  map<tick,Level> + umap (no reserve)",cancel_p50,68.6,67.3,-1.8950437317784217
+64,"3  map<tick,Level> + umap (no reserve)",cancel_p99,156.2,138.7,-11.20358514724712
+64,"3  map<tick,Level> + umap (reserve)",add,80.5,77.3,-3.975155279503109
+64,"3  map<tick,Level> + umap (reserve)",cancel,68.6,67.8,-1.1661807580174888
+64,"3  map<tick,Level> + umap (reserve)",bbo,3.07,3.09,0.6514657980456032
+64,"3  map<tick,Level> + umap (reserve)",add_p50,76.1,73.9,-2.8909329829171995
+64,"3  map<tick,Level> + umap (reserve)",add_p99,168.2,140.2,-16.646848989298455
+64,"3  map<tick,Level> + umap (reserve)",cancel_p50,70.1,69.8,-0.42796005706133694
+64,"3  map<tick,Level> + umap (reserve)",cancel_p99,114.3,140.0,22.484689413823276
+64,"4  flat Book (lab, banded)",add,46.8,41.8,-10.683760683760685
+64,"4  flat Book (lab, banded)",cancel,654.4,664.3,1.5128361858190675
+64,"4  flat Book (lab, banded)",bbo,2.05,2.05,0.0
+64,"4  flat Book (lab, banded)",add_p50,43.8,43.5,-0.6849315068493086
+64,"4  flat Book (lab, banded)",add_p99,114.0,109.6,-3.8596491228070224
+64,"4  flat Book (lab, banded)",cancel_p50,68.6,79.2,15.451895043731794
+64,"4  flat Book (lab, banded)",cancel_p99,2214.2,2207.0,-0.3251738776984834
+64,4  YOUR include/order_book.hpp,add,97.5,94.8,-2.7692307692307723
+64,4  YOUR include/order_book.hpp,cancel,675.4,659.4,-2.368966538347646
+64,4  YOUR include/order_book.hpp,bbo,2.06,2.08,0.9708737864077678
+64,4  YOUR include/order_book.hpp,add_p50,56.7,55.7,-1.763668430335097
+64,4  YOUR include/order_book.hpp,add_p99,159.4,167.8,5.2697616060225885
+64,4  YOUR include/order_book.hpp,cancel_p50,72.3,1203.2,1564.1770401106503
+64,4  YOUR include/order_book.hpp,cancel_p99,2212.0,2314.4,4.629294755877038
+1024,1a vector (unsorted),add,17.5,17.5,0.0
+1024,1a vector (unsorted),cancel,170.1,172.1,1.1757789535567313
+1024,1a vector (unsorted),bbo,1415.72,1393.34,-1.5808210663125553
+1024,1a vector (unsorted),add_p50,17.8,17.8,0.0
+1024,1a vector (unsorted),add_p99,29.1,31.0,6.529209621993122
+1024,1a vector (unsorted),cancel_p50,164.7,157.2,-4.553734061930784
+1024,1a vector (unsorted),cancel_p99,347.2,349.7,0.7200460829493088
+1024,1b vector (sorted by price),add,67.3,63.2,-6.092124814264479
+1024,1b vector (sorted by price),cancel,217.4,215.6,-0.8279668813247523
+1024,1b vector (sorted by price),bbo,0.96,0.92,-4.166666666666659
+1024,1b vector (sorted by price),add_p50,69.5,70.5,1.4388489208633093
+1024,1b vector (sorted by price),add_p99,157.2,152.8,-2.798982188295151
+1024,1b vector (sorted by price),cancel_p50,239.5,239.2,-0.12526096033403397
+1024,1b vector (sorted by price),cancel_p99,521.0,412.3,-20.863723608445294
+1024,"2  list + unordered_map<id,it>",add,54.7,54.1,-1.0968921389396735
+1024,"2  list + unordered_map<id,it>",cancel,74.2,74.1,-0.1347708894878821
+1024,"2  list + unordered_map<id,it>",bbo,12097.61,12065.24,-0.2675735124541194
+1024,"2  list + unordered_map<id,it>",add_p50,47.6,47.6,0.0
+1024,"2  list + unordered_map<id,it>",add_p99,137.4,135.9,-1.0917030567685588
+1024,"2  list + unordered_map<id,it>",cancel_p50,74.8,74.5,-0.40106951871657376
+1024,"2  list + unordered_map<id,it>",cancel_p99,95.2,94.9,-0.31512605042016506
+1024,"3  map<tick,Level> + umap (no reserve)",add,116.2,131.1,12.822719449225465
+1024,"3  map<tick,Level> + umap (no reserve)",cancel,96.4,104.2,8.09128630705394
+1024,"3  map<tick,Level> + umap (no reserve)",bbo,2.69,2.7,0.37174721189591936
+1024,"3  map<tick,Level> + umap (no reserve)",add_p50,123.0,124.9,1.5447154471544762
+1024,"3  map<tick,Level> + umap (no reserve)",add_p99,249.2,256.7,3.009630818619583
+1024,"3  map<tick,Level> + umap (no reserve)",cancel_p50,98.9,102.4,3.538928210313448
+1024,"3  map<tick,Level> + umap (no reserve)",cancel_p99,192.5,189.8,-1.4025974025973966
+1024,"3  map<tick,Level> + umap (reserve)",add,107.4,111.7,4.003724394785844
+1024,"3  map<tick,Level> + umap (reserve)",cancel,95.6,97.0,1.4644351464435206
+1024,"3  map<tick,Level> + umap (reserve)",bbo,3.08,3.25,5.519480519480517
+1024,"3  map<tick,Level> + umap (reserve)",add_p50,112.7,116.2,3.1055900621118013
+1024,"3  map<tick,Level> + umap (reserve)",add_p99,179.4,191.3,6.6332218506131575
+1024,"3  map<tick,Level> + umap (reserve)",cancel_p50,117.1,119.6,2.134927412467976
+1024,"3  map<tick,Level> + umap (reserve)",cancel_p99,192.2,189.1,-1.6129032258064488
+1024,"4  flat Book (lab, banded)",add,34.5,33.0,-4.3478260869565215
+1024,"4  flat Book (lab, banded)",cancel,79.5,81.3,2.264150943396223
+1024,"4  flat Book (lab, banded)",bbo,2.04,2.05,0.4901960784313621
+1024,"4  flat Book (lab, banded)",add_p50,28.5,28.2,-1.0526315789473708
+1024,"4  flat Book (lab, banded)",add_p99,107.7,105.8,-1.764159702878371
+1024,"4  flat Book (lab, banded)",cancel_p50,40.7,40.4,-0.7371007371007475
+1024,"4  flat Book (lab, banded)",cancel_p99,1329.4,1282.7,-3.512862945689788
+1024,4  YOUR include/order_book.hpp,add,46.0,45.1,-1.9565217391304317
+1024,4  YOUR include/order_book.hpp,cancel,83.8,86.1,2.744630071599042
+1024,4  YOUR include/order_book.hpp,bbo,2.05,2.06,0.4878048780487918
+1024,4  YOUR include/order_book.hpp,add_p50,33.5,34.1,1.7910447761194073
+1024,4  YOUR include/order_book.hpp,add_p99,161.2,159.1,-1.3027295285359768
+1024,4  YOUR include/order_book.hpp,cancel_p50,44.2,43.8,-0.9049773755656236
+1024,4  YOUR include/order_book.hpp,cancel_p99,1252.3,1252.1,-0.015970614070114627
+16384,1a vector (unsorted),add,31.0,43.0,38.70967741935484
+16384,1a vector (unsorted),cancel,2484.0,2498.8,0.595813204508864
+16384,1a vector (unsorted),bbo,55463.15,43999.82,-20.668371702653026
+16384,1a vector (unsorted),add_p50,17.8,17.8,0.0
+16384,1a vector (unsorted),add_p99,46.3,62.9,35.85313174946005
+16384,1a vector (unsorted),cancel_p50,2455.0,2452.8,-0.08961303462321052
+16384,1a vector (unsorted),cancel_p99,5418.1,5507.9,1.6574075783023434
+16384,1b vector (sorted by price),add,1070.3,1070.2,-0.009343174810792212
+16384,1b vector (sorted by price),cancel,3250.7,3252.3,0.04922016796383437
+16384,1b vector (sorted by price),bbo,0.92,0.93,1.0869565217391313
+16384,1b vector (sorted by price),add_p50,1045.1,1043.9,-0.11482154817719052
+16384,1b vector (sorted by price),add_p99,2516.9,2534.5,0.6992729150939612
+16384,1b vector (sorted by price),cancel_p50,3225.5,3221.1,-0.13641295923112978
+16384,1b vector (sorted by price),cancel_p99,7157.6,7023.3,-1.8763272605342598
+16384,"2  list + unordered_map<id,it>",add,56.7,55.7,-1.763668430335097
+16384,"2  list + unordered_map<id,it>",cancel,110.7,109.7,-0.9033423667570009
+16384,"2  list + unordered_map<id,it>",bbo,339485.74,346656.26,2.112171191638276
+16384,"2  list + unordered_map<id,it>",add_p50,44.8,44.8,0.0
+16384,"2  list + unordered_map<id,it>",add_p99,201.0,186.6,-7.164179104477614
+16384,"2  list + unordered_map<id,it>",cancel_p50,107.4,107.7,0.2793296089385448
+16384,"2  list + unordered_map<id,it>",cancel_p99,133.1,139.3,4.658151765589795
+16384,"3  map<tick,Level> + umap (no reserve)",add,121.6,125.4,3.1250000000000093
+16384,"3  map<tick,Level> + umap (no reserve)",cancel,170.6,171.6,0.5861664712778429
+16384,"3  map<tick,Level> + umap (no reserve)",bbo,2.68,2.76,2.9850746268656576
+16384,"3  map<tick,Level> + umap (no reserve)",add_p50,110.2,110.8,0.5444646098003578
+16384,"3  map<tick,Level> + umap (no reserve)",add_p99,385.1,450.5,16.982601921578805
+16384,"3  map<tick,Level> + umap (no reserve)",cancel_p50,163.8,166.9,1.892551892551889
+16384,"3  map<tick,Level> + umap (no reserve)",cancel_p99,213.2,209.4,-1.7823639774859208
+16384,"3  map<tick,Level> + umap (reserve)",add,114.9,118.3,2.9590948651000795
+16384,"3  map<tick,Level> + umap (reserve)",cancel,169.8,172.2,1.4134275618374423
+16384,"3  map<tick,Level> + umap (reserve)",bbo,3.1,3.17,2.258064516129027
+16384,"3  map<tick,Level> + umap (reserve)",add_p50,110.5,113.3,2.5339366515837076
+16384,"3  map<tick,Level> + umap (reserve)",add_p99,180.3,185.1,2.662229617304483
+16384,"3  map<tick,Level> + umap (reserve)",cancel_p50,166.9,165.9,-0.5991611743559018
+16384,"3  map<tick,Level> + umap (reserve)",cancel_p99,209.1,221.3,5.834528933524639
+16384,"4  flat Book (lab, banded)",add,28.5,28.8,1.0526315789473708
+16384,"4  flat Book (lab, banded)",cancel,69.3,71.5,3.174603174603179
+16384,"4  flat Book (lab, banded)",bbo,2.05,2.04,-0.48780487804877015
+16384,"4  flat Book (lab, banded)",add_p50,24.1,24.1,0.0
+16384,"4  flat Book (lab, banded)",add_p99,124.0,124.3,0.24193548387096545
+16384,"4  flat Book (lab, banded)",cancel_p50,67.3,68.2,1.3372956909361156
+16384,"4  flat Book (lab, banded)",cancel_p99,83.9,81.7,-2.622169249106082
+16384,4  YOUR include/order_book.hpp,add,34.1,34.1,0.0
+16384,4  YOUR include/order_book.hpp,cancel,70.0,69.3,-1.000000000000004
+16384,4  YOUR include/order_book.hpp,bbo,2.05,2.06,0.4878048780487918
+16384,4  YOUR include/order_book.hpp,add_p50,28.5,28.5,0.0
+16384,4  YOUR include/order_book.hpp,add_p99,120.5,113.0,-6.224066390041494
+16384,4  YOUR include/order_book.hpp,cancel_p50,67.9,67.3,-0.8836524300441951
+16384,4  YOUR include/order_book.hpp,cancel_p99,80.5,82.7,2.7329192546583885
