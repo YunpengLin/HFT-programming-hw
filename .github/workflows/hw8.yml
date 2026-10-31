@@ -1,0 +1,35 @@
+name: HW8 RollingCounter
+
+on:
+  push:
+    branches: [main]
+    paths: ['hw8/**', '.github/workflows/hw8.yml']
+  pull_request:
+    branches: [main]
+    paths: ['hw8/**', '.github/workflows/hw8.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rolling:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        working-directory: hw8
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Window correctness, expiry and interleaved ns/op
+        run: python3 run_checks.py
+      - name: Save raw results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hw8-results
+          path: |
+            hw8/report.json
+            hw8/RESULTS.md

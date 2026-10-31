@@ -1,0 +1,50 @@
+{
+  "measured_at_utc": "2026-10-31T04:35:46.476913+00:00",
+  "environment": "local",
+  "os": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "cpu": "AMD Ryzen 9 9955HX 16-Core Processor",
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "flags": [
+    "-std=c++17",
+    "-O2",
+    "-pthread",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "window_ns": 1000,
+  "measured_iterations_per_run": 2000000,
+  "warmup_iterations_per_run": 200001,
+  "op_definition": "add(t), count(t), result barrier, ++t",
+  "raw_runs": [
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.56882\n",
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.57619\n",
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.64519\n",
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.60748\n",
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.60559\n",
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.58469\n",
+    "RESULT|rc_window|pass|counts a full window correctly\nRESULT|rc_mixed|pass|expires old events as the clock advances\nMETRIC|rolling_ns_per_op|2.92112\n"
+  ],
+  "boundary_checks": {
+    "early_zero": "pass",
+    "equal_window": "pass",
+    "duplicate_and_repeated_clock": "pass",
+    "strict_cutoff": "pass",
+    "zero_window": "pass"
+  },
+  "boundary_output": "RESULT|early_zero|pass|boundary correctness\nRESULT|equal_window|pass|boundary correctness\nRESULT|duplicate_and_repeated_clock|pass|boundary correctness\nRESULT|strict_cutoff|pass|boundary correctness\nRESULT|zero_window|pass|boundary correctness\n",
+  "course_checks": {
+    "rc_window": "pass",
+    "rc_mixed": "pass"
+  },
+  "ns_per_op_runs": [
+    2.56882,
+    2.57619,
+    2.64519,
+    2.60748,
+    2.60559,
+    2.58469,
+    2.92112
+  ],
+  "median_ns_per_op": 2.60559
+}
