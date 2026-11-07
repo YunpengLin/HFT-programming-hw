@@ -1,0 +1,35 @@
+name: HW10 SPSC Ring
+
+on:
+  push:
+    branches: [main]
+    paths: ['hw10/**', '.github/workflows/hw10.yml']
+  pull_request:
+    branches: [main]
+    paths: ['hw10/**', '.github/workflows/hw10.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  spsc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: hw10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Check boundaries and transfer 10 million items in FIFO order
+        run: |
+          g++ -std=c++17 -O2 -Wall -Wextra -Wpedantic -pthread spsc_test.cpp -o /tmp/hw10_spsc
+          /tmp/hw10_spsc 10000000
+      - name: Check for data races with ThreadSanitizer
+        env:
+          TSAN_OPTIONS: halt_on_error=1
+        run: |
+          g++ -std=c++17 -O1 -g -pthread -fsanitize=thread spsc_test.cpp -o /tmp/hw10_spsc_tsan
+          /tmp/hw10_spsc_tsan 200000
