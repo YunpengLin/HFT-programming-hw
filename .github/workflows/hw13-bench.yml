@@ -1,0 +1,40 @@
+name: HW13 GCC benchmark
+on:
+  push:
+    branches: [hw13-compiler-benchmark]
+    paths:
+      - 'hw13/kernel.cpp'
+      - 'hw13/bench.py'
+      - '.github/workflows/hw13-bench.yml'
+permissions:
+  contents: read
+jobs:
+  measure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install perf if needed
+        run: |
+          if ! find /usr/lib/linux-tools -type f -name perf 2>/dev/null | grep -q .; then
+            sudo apt-get update -qq && sudo apt-get install -y -qq linux-tools-generic || true
+          fi
+      - name: Install dynamic instruction profiler
+        run: command -v valgrind || (sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends valgrind)
+      - name: Measure frozen kernel
+        working-directory: hw13
+        run: python3 bench.py
+      - name: Save measurement record on the benchmark branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- hw13/results
+          git commit -m "Record HW13 measurements from run ${GITHUB_RUN_ID}"
+          git push origin HEAD:hw13-compiler-benchmark
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hw13-measurements
+          path: hw13/results
