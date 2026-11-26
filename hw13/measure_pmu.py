@@ -12,16 +12,11 @@ import subprocess
 import sys
 import tempfile
 
+from bench import FLAGS, TRAIN
+
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "kernel.cpp"
 OPS = 65536 * 3000
-NATIVE = ["-O3", "-march=native"]
-STRICT = NATIVE + ["-ffp-contract=off"]
-BUILDS = {
-    "O0": ["-O0"], "O2": ["-O2"], "O3": ["-O3"], "native": NATIVE,
-    "native_unroll": NATIVE + ["-funroll-loops"], "pgo": NATIVE,
-    "native_no_contract": STRICT, "strict_unroll": STRICT + ["-funroll-loops"],
-}
 EVENTS = ["cycles", "instructions", "branches", "branch-misses"]
 
 
@@ -78,15 +73,16 @@ def main():
     (out / "environment.txt").write_text(platform.platform() + "\n"
         + subprocess.check_output(["lscpu"], text=True)
         + subprocess.check_output(["g++", "--version"], text=True)
+        + "Actions run: " + os.getenv("GITHUB_RUN_ID", "local") + "\n"
         + "CPU affinity: " + str(os.sched_getaffinity(0)) + "\nEvents: " + ", ".join(supported) + "\n")
-    samples = {n: [] for n in BUILDS}
+    samples = {n: [] for n in FLAGS}
     with tempfile.TemporaryDirectory() as temp:
         binaries = {}
-        for name, flags in BUILDS.items():
+        for name, flags in FLAGS.items():
             folder = Path(temp) / name
             folder.mkdir()
-            flags = list(flags)
-            if name == "pgo":
+            flags = flags.split()
+            if name in TRAIN:
                 subprocess.run(["g++", *flags, "-fprofile-generate", SOURCE, "-o", "fast"], cwd=folder, check=True)
                 subprocess.run(["./fast"], cwd=folder, check=True, stdout=subprocess.DEVNULL)
                 flags += ["-fprofile-use", "-Werror=missing-profile", "-Werror=coverage-mismatch"]
@@ -98,7 +94,7 @@ def main():
             writer = csv.writer(f)
             writer.writerow(["round", "build", "kernel_ms", "checksum", *supported])
             for block in range(1, 6):
-                names = list(BUILDS)
+                names = list(FLAGS)
                 rng.shuffle(names)
                 for n in names:
                     result = subprocess.run([*perf, "stat", "-x", ";", "-e",
@@ -121,7 +117,10 @@ def main():
             ms = statistics.median(r[0] for r in rows)
             writer.writerow([n, ms, baseline / ms, rows[0][1],
                              *(statistics.median(r[2][e] for r in rows) / OPS for e in supported)])
-    print((out / "summary.csv").read_text(), flush=True)
+    for name in ("environment.txt", "samples.csv", "summary.csv", "perf-stat.txt"):
+        print(f"HW13_BEGIN {name}", flush=True)
+        print((out / name).read_text(), end="", flush=True)
+        print(f"HW13_END {name}", flush=True)
 
 
 if __name__ == "__main__":
