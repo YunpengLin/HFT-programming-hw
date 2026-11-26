@@ -26,6 +26,10 @@ FLAGS = {
     "pgo": NATIVE,
     "native_no_contract": NATIVE + " -ffp-contract=off",
     "no_errno_no_contract": NATIVE + " -ffp-contract=off -fno-math-errno",
+    "strict_unroll": NATIVE + " -ffp-contract=off -funroll-loops",
+    "strict_pgo": NATIVE + " -ffp-contract=off",
+    "strict_unroll_pgo": NATIVE + " -ffp-contract=off -funroll-loops",
+    "O2_unroll": "-O2 -funroll-loops",
     "all_strict": NATIVE + " -ffp-contract=off -funroll-loops -flto",
     "fast_math": NATIVE + " -ffast-math",
     "fast_unroll": NATIVE + " -ffast-math -funroll-loops",
@@ -33,7 +37,7 @@ FLAGS = {
     "fast_pgo": NATIVE + " -ffast-math",
     "fast_all_pgo": NATIVE + " -ffast-math -funroll-loops -flto",
 }
-TRAIN = {"pgo", "all_strict", "fast_pgo", "fast_all_pgo"}
+TRAIN = {"pgo", "strict_pgo", "strict_unroll_pgo", "all_strict", "fast_pgo", "fast_all_pgo"}
 CYCLES_WRAPPER = r'''
 #include <cstdio>
 #include <sys/wait.h>
@@ -107,7 +111,9 @@ def perf_prefix(work):
             if re.search(r"(?m)^\s*\d+;[^;]*;cycles:u;", p.stderr):
                 return prefix, p.stderr
             last = p.stderr.strip()
-    return (available[0] if available else []), last
+    # Prefer the matching perf binary and its privileged probe on the hosted VM.
+    fallback = available[min(1, len(available) - 1)] if available else []
+    return fallback, last
 
 
 def main():
@@ -162,6 +168,33 @@ def main():
                 perf = subprocess.run([*prefix, "stat", "-r", "3", "-x", ";", "-e", events,
                                        "--", binary], text=True, capture_output=True)
                 (OUT / (name + ".perf.txt")).write_text(perf.stderr + "\n" + perf.stdout)
+        if prefix:
+            # Software events remain available on some VMs without a virtual PMU.
+            for name in binaries:
+                software = subprocess.run([*prefix, "stat", "-r", "3", "-x", ";", "-e",
+                    "task-clock,context-switches,cpu-migrations,page-faults", "--", binaries[name]],
+                    text=True, capture_output=True)
+                (OUT / (name + ".software.txt")).write_text(software.stderr + "\n" + software.stdout)
+        if shutil.which("valgrind"):
+            counts = {}
+            ref = summary["O0"]["checksum"]
+            exact = min((n for n in summary if summary[n]["checksum"] == ref), key=lambda n: summary[n]["ms"])
+            quickest = min(summary, key=lambda n: summary[n]["ms"])
+            for name in dict.fromkeys(["O0", "O2", "O3", "native", "unroll", "pgo", "lto",
+                                       "fast_math", "native_no_contract", "strict_unroll", exact, quickest]):
+                path = work / ("cg-" + name)
+                child = subprocess.run(["valgrind", "--tool=cachegrind", "--cache-sim=no",
+                    "--branch-sim=yes", "--cachegrind-out-file=" + str(path), binaries[name]],
+                    text=True, capture_output=True)
+                if child.returncode:
+                    counts[name] = {"error": child.stderr[-1400:]}
+                    continue
+                data = path.read_text()
+                keys = re.search(r"^events:\s*(.+)$", data, re.M)[1].split()
+                values = re.search(r"^summary:\s*(.+)$", data, re.M)[1].split()
+                counts[name] = dict(zip(keys, map(int, values)))
+                counts[name]["checksum"] = re.search(r"checksum=(\S+)", child.stdout)[1]
+            (OUT / "dynamic-counts.json").write_text(json.dumps(counts, indent=2) + "\n")
         (OUT / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
         print(json.dumps(summary, indent=2))
 
