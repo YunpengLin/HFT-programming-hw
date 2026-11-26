@@ -1,6 +1,6 @@
 Git blob 5e3cfa363da463f924b0984480b27ae573279a41
 Pinned logical CPU 0
-Run 45891761465
+Run 45892045664
 Linux-7.0.0-1020-azure-x86_64-with-glibc2.39
 g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
 Copyright (C) 2023 Free Software Foundation, Inc.
@@ -52,7 +52,7 @@ Vulnerability Tsa:                       Not affected
 Vulnerability Tsx async abort:           Not affected
 Vulnerability Vmscape:                   Not affected
 
-perf command: ['/usr/lib/linux-tools/7.0.0-1020-azure/perf']
+perf command: ['sudo', '-n', '/usr/lib/linux-tools/7.0.0-1020-azure/perf']
 perf probe:
 Error:
 No supported events found.

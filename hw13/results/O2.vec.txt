@@ -16,12 +16,12 @@
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis succeeded with vector mode V2DI
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: SLPing BB part
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: Costing subgraph: 
-/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x38424c28 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x31654b98 (max_nunits=2, refcnt=1) vector(2) long unsigned int
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: op template: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&b]._M_end_of_storage = 0B;
-/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x38424ca8
-/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x38424ca8 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x31654c18
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x31654c18 (max_nunits=1, refcnt=1) vector(2) long unsigned int
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: 	{ 0B, 0B }
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis: 
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis for part in loop 0:
@@ -29,12 +29,12 @@
   Scalar cost: 24
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: Basic block will be vectorized using SLP
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: Vectorizing SLP tree:
-/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x38424c28 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x31654b98 (max_nunits=2, refcnt=1) vector(2) long unsigned int
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: op template: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&b]._M_end_of_storage = 0B;
-/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x38424ca8
-/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x38424ca8 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x31654c18
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x31654c18 (max_nunits=1, refcnt=1) vector(2) long unsigned int
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: 	{ 0B, 0B }
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: ------>vectorizing SLP node starting from: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
 /usr/include/c++/13/bits/stl_vector.h:100:16: note: vect_is_simple_use: operand 0B, type of def: constant

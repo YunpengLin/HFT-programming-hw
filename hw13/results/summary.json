@@ -1,122 +1,154 @@
 {
   "O0": {
     "flags": "-O0",
-    "ms": 1111.771,
-    "min_ms": 1106.116,
-    "max_ms": 1130.904,
+    "ms": 1181.756,
+    "min_ms": 1136.004,
+    "max_ms": 1222.176,
     "checksum": "151299320.423484",
-    "reference_ticks_per_op": 14.704755391438802
+    "reference_ticks_per_op": 15.629453389485677
   },
   "O2": {
     "flags": "-O2",
-    "ms": 116.794,
-    "min_ms": 116.667,
-    "max_ms": 117.427,
+    "ms": 123.626,
+    "min_ms": 117.246,
+    "max_ms": 127.744,
     "checksum": "151299320.423484",
-    "reference_ticks_per_op": 1.5640372416178385
+    "reference_ticks_per_op": 1.6555708414713541
   },
   "O3": {
     "flags": "-O3",
-    "ms": 116.869,
-    "min_ms": 116.694,
-    "max_ms": 117.494,
+    "ms": 124.967,
+    "min_ms": 118.629,
+    "max_ms": 142.831,
     "checksum": "151299320.423484",
-    "reference_ticks_per_op": 1.5648094075520833
+    "reference_ticks_per_op": 1.6733319803873699
   },
   "native": {
     "flags": "-O3 -march=native",
-    "ms": 111.94,
-    "min_ms": 111.751,
-    "max_ms": 115.162,
+    "ms": 119.133,
+    "min_ms": 116.408,
+    "max_ms": 122.491,
     "checksum": "151299320.088155",
-    "reference_ticks_per_op": 1.5000771993001303
+    "reference_ticks_per_op": 1.5959176839192708
   },
   "unroll": {
     "flags": "-O3 -march=native -funroll-loops",
-    "ms": 109.325,
-    "min_ms": 108.996,
-    "max_ms": 109.808,
+    "ms": 116.328,
+    "min_ms": 113.328,
+    "max_ms": 118.515,
     "checksum": "151299320.088155",
-    "reference_ticks_per_op": 1.465344014485677
+    "reference_ticks_per_op": 1.5590735066731771
   },
   "lto": {
     "flags": "-O3 -march=native -flto",
-    "ms": 177.221,
-    "min_ms": 176.232,
-    "max_ms": 177.891,
+    "ms": 188.279,
+    "min_ms": 179.799,
+    "max_ms": 190.307,
     "checksum": "151299320.088155",
-    "reference_ticks_per_op": 2.3627535705566407
+    "reference_ticks_per_op": 2.5099571736653647
   },
   "pgo": {
     "flags": "-O3 -march=native -fprofile-use",
-    "ms": 109.439,
-    "min_ms": 109.104,
-    "max_ms": 109.701,
+    "ms": 116.282,
+    "min_ms": 114.306,
+    "max_ms": 136.79,
     "checksum": "151299320.088155",
-    "reference_ticks_per_op": 1.4677214762369792
+    "reference_ticks_per_op": 1.558437021891276
   },
   "native_no_contract": {
     "flags": "-O3 -march=native -ffp-contract=off",
-    "ms": 114.946,
-    "min_ms": 114.5,
-    "max_ms": 115.7,
+    "ms": 122.739,
+    "min_ms": 116.327,
+    "max_ms": 125.463,
     "checksum": "151299320.423484",
-    "reference_ticks_per_op": 1.5396834004720052
+    "reference_ticks_per_op": 1.6442369689941407
   },
   "no_errno_no_contract": {
     "flags": "-O3 -march=native -ffp-contract=off -fno-math-errno",
-    "ms": 114.807,
-    "min_ms": 114.644,
-    "max_ms": 116.972,
+    "ms": 122.016,
+    "min_ms": 115.747,
+    "max_ms": 131.267,
     "checksum": "151299320.423484",
-    "reference_ticks_per_op": 1.5384967854817708
+    "reference_ticks_per_op": 1.6336566162109376
+  },
+  "strict_unroll": {
+    "flags": "-O3 -march=native -ffp-contract=off -funroll-loops",
+    "ms": 119.874,
+    "min_ms": 117.052,
+    "max_ms": 126.414,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.6058037618001302
+  },
+  "strict_pgo": {
+    "flags": "-O3 -march=native -ffp-contract=off -fprofile-use",
+    "ms": 122.363,
+    "min_ms": 115.19,
+    "max_ms": 144.056,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.6385987955729167
+  },
+  "strict_unroll_pgo": {
+    "flags": "-O3 -march=native -ffp-contract=off -funroll-loops -fprofile-use",
+    "ms": 122.496,
+    "min_ms": 114.726,
+    "max_ms": 126.987,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.640557840983073
+  },
+  "O2_unroll": {
+    "flags": "-O2 -funroll-loops",
+    "ms": 121.689,
+    "min_ms": 116.056,
+    "max_ms": 125.284,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.6290995279947917
   },
   "all_strict": {
     "flags": "-O3 -march=native -ffp-contract=off -funroll-loops -flto -fprofile-use",
-    "ms": 116.78,
-    "min_ms": 116.066,
-    "max_ms": 121.468,
+    "ms": 123.117,
+    "min_ms": 121.852,
+    "max_ms": 130.132,
     "checksum": "151299320.423484",
-    "reference_ticks_per_op": 1.566248738606771
+    "reference_ticks_per_op": 1.6512594604492188
   },
   "fast_math": {
     "flags": "-O3 -march=native -ffast-math",
-    "ms": 115.709,
-    "min_ms": 115.533,
-    "max_ms": 116.288,
+    "ms": 122.276,
+    "min_ms": 117.004,
+    "max_ms": 129.077,
     "checksum": "151299381.089976",
-    "reference_ticks_per_op": 1.5501108805338542
+    "reference_ticks_per_op": 1.6380707499186198
   },
   "fast_unroll": {
     "flags": "-O3 -march=native -ffast-math -funroll-loops",
-    "ms": 113.9,
-    "min_ms": 113.743,
-    "max_ms": 115.924,
+    "ms": 120.524,
+    "min_ms": 115.252,
+    "max_ms": 124.685,
     "checksum": "151299381.089976",
-    "reference_ticks_per_op": 1.5262819112141928
+    "reference_ticks_per_op": 1.614692596435547
   },
   "fast_lto": {
     "flags": "-O3 -march=native -ffast-math -flto",
-    "ms": 115.613,
-    "min_ms": 115.447,
-    "max_ms": 119.576,
+    "ms": 122.42,
+    "min_ms": 119.685,
+    "max_ms": 148.759,
     "checksum": "151299381.089976",
-    "reference_ticks_per_op": 1.5487679545084636
+    "reference_ticks_per_op": 1.6393761189778646
   },
   "fast_pgo": {
     "flags": "-O3 -march=native -ffast-math -fprofile-use",
-    "ms": 118.421,
-    "min_ms": 118.234,
-    "max_ms": 125.09,
+    "ms": 126.227,
+    "min_ms": 122.678,
+    "max_ms": 129.01,
     "checksum": "151299381.089976",
-    "reference_ticks_per_op": 1.5859449869791666
+    "reference_ticks_per_op": 1.6897894694010416
   },
   "fast_all_pgo": {
     "flags": "-O3 -march=native -ffast-math -funroll-loops -flto -fprofile-use",
-    "ms": 116.22,
-    "min_ms": 116.016,
-    "max_ms": 117.007,
+    "ms": 123.198,
+    "min_ms": 118.27,
+    "max_ms": 126.665,
     "checksum": "151299381.089976",
-    "reference_ticks_per_op": 1.558548370361328
+    "reference_ticks_per_op": 1.6507333984375
   }
 }
