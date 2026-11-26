@@ -60,23 +60,26 @@ int main(int argc, char** argv) {
 
 
 def run(args, **kwargs):
-    return subprocess.run(args, check=True, text=True, capture_output=True, **kwargs).stdout
+    proc = subprocess.run(args, text=True, capture_output=True, **kwargs)
+    if proc.returncode:
+        raise RuntimeError(f"{args} failed ({proc.returncode}):\n{proc.stderr}")
+    return proc.stdout
 
 
 def compile_variant(work, name, flag_string):
-    binary = work / name
+    directory = work / name
+    directory.mkdir()
+    binary = directory / "fast"
     options = flag_string.split()
     if name in TRAIN:
-        directory = work / ("profile-" + name)
-        directory.mkdir()
-        run(["g++", *options, "-fprofile-generate=" + str(directory), SOURCE, "-o", binary])
-        run([binary])
-        if not list(directory.glob("*.gcda")):
-            raise RuntimeError("Missing training data: " + name)
-        options += ["-fprofile-use=" + str(directory), "-Werror=missing-profile",
-                    "-Werror=coverage-mismatch"]
+        run(["g++", *options, "-fprofile-generate", SOURCE, "-o", "fast"], cwd=directory)
+        run([binary], cwd=directory)
+        if not list(directory.rglob("*.gcda")):
+            raise RuntimeError("Missing training data: " + name + " " + str(list(directory.iterdir())))
+        options += ["-fprofile-use", "-Werror=missing-profile", "-Werror=coverage-mismatch"]
     remarks = OUT / (name + ".vec.txt")
-    run(["g++", *options, "-fopt-info-vec-all=" + str(remarks), SOURCE, "-o", binary])
+    remarks.unlink(missing_ok=True)
+    run(["g++", *options, "-fopt-info-vec-all=" + str(remarks), SOURCE, "-o", "fast"], cwd=directory)
     listing = run(["objdump", "-d", "-C", "-M", "intel", binary])
     sections = re.split(r"(?=^[0-9a-f]+ <)", listing, flags=re.M)
     hot = [s for s in sections if re.match(r"^[0-9a-f]+ <(?:main>|kernel\()", s)]
@@ -104,7 +107,7 @@ def perf_prefix(work):
             if re.search(r"(?m)^\s*\d+;[^;]*;cycles:u;", p.stderr):
                 return prefix, p.stderr
             last = p.stderr.strip()
-    return (available[-1] if available else []), last
+    return (available[0] if available else []), last
 
 
 def main():
@@ -151,7 +154,7 @@ def main():
             if len(checks) != 1:
                 raise RuntimeError("Inconsistent checksum: " + name)
             times = [s[2] for s in rows]
-            summary[name] = dict(flags=FLAGS[name] + (" -fprofile-use=PROFILE" if name in TRAIN else ""),
+            summary[name] = dict(flags=FLAGS[name] + (" -fprofile-use" if name in TRAIN else ""),
                 ms=statistics.median(times), min_ms=min(times), max_ms=max(times), checksum=checks.pop(),
                 reference_ticks_per_op=statistics.median(s[4] for s in rows) / OPS)
             if prefix:
