@@ -1,0 +1,122 @@
+{
+  "O0": {
+    "flags": "-O0",
+    "ms": 1111.771,
+    "min_ms": 1106.116,
+    "max_ms": 1130.904,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 14.704755391438802
+  },
+  "O2": {
+    "flags": "-O2",
+    "ms": 116.794,
+    "min_ms": 116.667,
+    "max_ms": 117.427,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.5640372416178385
+  },
+  "O3": {
+    "flags": "-O3",
+    "ms": 116.869,
+    "min_ms": 116.694,
+    "max_ms": 117.494,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.5648094075520833
+  },
+  "native": {
+    "flags": "-O3 -march=native",
+    "ms": 111.94,
+    "min_ms": 111.751,
+    "max_ms": 115.162,
+    "checksum": "151299320.088155",
+    "reference_ticks_per_op": 1.5000771993001303
+  },
+  "unroll": {
+    "flags": "-O3 -march=native -funroll-loops",
+    "ms": 109.325,
+    "min_ms": 108.996,
+    "max_ms": 109.808,
+    "checksum": "151299320.088155",
+    "reference_ticks_per_op": 1.465344014485677
+  },
+  "lto": {
+    "flags": "-O3 -march=native -flto",
+    "ms": 177.221,
+    "min_ms": 176.232,
+    "max_ms": 177.891,
+    "checksum": "151299320.088155",
+    "reference_ticks_per_op": 2.3627535705566407
+  },
+  "pgo": {
+    "flags": "-O3 -march=native -fprofile-use",
+    "ms": 109.439,
+    "min_ms": 109.104,
+    "max_ms": 109.701,
+    "checksum": "151299320.088155",
+    "reference_ticks_per_op": 1.4677214762369792
+  },
+  "native_no_contract": {
+    "flags": "-O3 -march=native -ffp-contract=off",
+    "ms": 114.946,
+    "min_ms": 114.5,
+    "max_ms": 115.7,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.5396834004720052
+  },
+  "no_errno_no_contract": {
+    "flags": "-O3 -march=native -ffp-contract=off -fno-math-errno",
+    "ms": 114.807,
+    "min_ms": 114.644,
+    "max_ms": 116.972,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.5384967854817708
+  },
+  "all_strict": {
+    "flags": "-O3 -march=native -ffp-contract=off -funroll-loops -flto -fprofile-use",
+    "ms": 116.78,
+    "min_ms": 116.066,
+    "max_ms": 121.468,
+    "checksum": "151299320.423484",
+    "reference_ticks_per_op": 1.566248738606771
+  },
+  "fast_math": {
+    "flags": "-O3 -march=native -ffast-math",
+    "ms": 115.709,
+    "min_ms": 115.533,
+    "max_ms": 116.288,
+    "checksum": "151299381.089976",
+    "reference_ticks_per_op": 1.5501108805338542
+  },
+  "fast_unroll": {
+    "flags": "-O3 -march=native -ffast-math -funroll-loops",
+    "ms": 113.9,
+    "min_ms": 113.743,
+    "max_ms": 115.924,
+    "checksum": "151299381.089976",
+    "reference_ticks_per_op": 1.5262819112141928
+  },
+  "fast_lto": {
+    "flags": "-O3 -march=native -ffast-math -flto",
+    "ms": 115.613,
+    "min_ms": 115.447,
+    "max_ms": 119.576,
+    "checksum": "151299381.089976",
+    "reference_ticks_per_op": 1.5487679545084636
+  },
+  "fast_pgo": {
+    "flags": "-O3 -march=native -ffast-math -fprofile-use",
+    "ms": 118.421,
+    "min_ms": 118.234,
+    "max_ms": 125.09,
+    "checksum": "151299381.089976",
+    "reference_ticks_per_op": 1.5859449869791666
+  },
+  "fast_all_pgo": {
+    "flags": "-O3 -march=native -ffast-math -funroll-loops -flto -fprofile-use",
+    "ms": 116.22,
+    "min_ms": 116.016,
+    "max_ms": 117.007,
+    "checksum": "151299381.089976",
+    "reference_ticks_per_op": 1.558548370361328
+  }
+}

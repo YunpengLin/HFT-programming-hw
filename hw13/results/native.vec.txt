@@ -1,0 +1,104 @@
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_7, _15);
+/usr/include/c++/13/bits/stl_vector.h:738:7: note: ***** Analysis failed with vector mode V8DI
+/usr/include/c++/13/bits/stl_vector.h:738:7: note: ***** Skipping vector mode V64QI, which would repeat the analysis for V8DI
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:22:29: missed: couldn't vectorize loop
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:22:29: missed: not vectorized: control flow in loop.
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:23:35: missed: couldn't vectorize loop
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:23:35: missed: not vectorized: control flow in loop.
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:35:31: missed: couldn't vectorize loop
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:36:14: missed: not vectorized: no vectype for stmt: *_39 = _5;
+ scalar_type: value_type
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: note: vectorized 0 loops in function.
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: missed: splitting region at control altering definition _84 = operator new (262144);
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: statement clobbers memory: _67 = operator new (262144);
+/usr/include/c++/13/bits/stl_algobase.h:931:11: missed: statement clobbers memory: __builtin_memset (__first_68, 0, 262140);
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: not vectorized: statement can throw an exception: _84 = operator new (262144);
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis succeeded with vector mode V8DI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x10562d18 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: op template: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&b]._M_end_of_storage = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x10562d98
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x10562d98 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis for part in loop 0:
+  Vector cost: 36
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:16: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** The result for vector mode V64QI would be the same
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Re-trying analysis with vector mode V32QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis succeeded with vector mode V32QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x10562d18 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: op template: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&b]._M_end_of_storage = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x10562d98
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x10562d98 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis for part in loop 0:
+  Vector cost: 36
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:16: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Re-trying analysis with vector mode V16QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis succeeded with vector mode V16QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x10562d18 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: op template: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&b]._M_end_of_storage = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x10562d98
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x10562d98 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis for part in loop 0:
+  Vector cost: 36
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:16: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Re-trying analysis with vector mode V8QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis succeeded with vector mode V8QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node 0x10562d18 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: op template: MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 0 MEM[(struct _Vector_impl_data *)&b]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	stmt 1 MEM[(struct _Vector_impl_data *)&b]._M_end_of_storage = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	children 0x10562d98
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: node (constant) 0x10562d98 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: Cost model analysis for part in loop 0:
+  Vector cost: 44
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:16: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Re-trying analysis with vector mode V4QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis failed with vector mode V4QI
+/usr/include/c++/13/bits/stl_vector.h:100:16: missed: splitting region at dominance boundary bb5
+/usr/include/c++/13/bits/stl_vector.h:100:16: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/13/bits/stl_vector.h:100:16: missed: splitting region at dominance boundary bb21
+/usr/include/c++/13/bits/stl_algobase.h:931:11: missed: statement clobbers memory: __builtin_memset (__first_85, 0, 262140);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:39:45: missed: statement clobbers memory: t0 = std::chrono::_V2::steady_clock::now ();
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:41:45: missed: statement clobbers memory: t1 = std::chrono::_V2::steady_clock::now ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:23: missed: not vectorized: statement can throw an exception: __printf_chk (2, "checksum=%.6f time_ms=%.3f\n", acc_136, _41);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: std::vector<float>::~vector (&b);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: missed: not vectorized: statement can throw an exception: resx 11
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: note: ***** Analysis failed with vector mode V8DI
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: note: ***** Skipping vector mode V64QI, which would repeat the analysis for V8DI
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: splitting region at dominance boundary bb17
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: std::vector<float>::~vector (&a);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: note: ***** Analysis failed with vector mode VOID
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: splitting region at dominance boundary bb22
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: std::vector<float>::~vector (&b);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: std::vector<float>::~vector (&a);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: note: ***** Analysis failed with vector mode VOID
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: missed: splitting region at dominance boundary bb23
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: note: ***** Analysis failed with vector mode VOID
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: missed: splitting region at dominance boundary bb24
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: note: ***** Analysis failed with vector mode VOID
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: note: ***** Analysis failed with vector mode VOID

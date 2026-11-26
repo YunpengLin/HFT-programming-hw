@@ -1,0 +1,89 @@
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:22:29: missed: couldn't vectorize loop
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:22:29: missed: not vectorized: control flow in loop.
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:23:35: missed: couldn't vectorize loop
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:23:35: missed: not vectorized: control flow in loop.
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: note: vectorized 0 loops in function.
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:34:27: missed: statement clobbers memory: __ct_base .constprop (&a);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:34:33: missed: not vectorized: statement can throw an exception: __ct_base .constprop (&b);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:39:45: missed: statement clobbers memory: t0 = now ();
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:41:45: missed: statement clobbers memory: t1 = now ();
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:86:23: missed: not vectorized: statement can throw an exception: __printf_chk (2, "checksum=%.6f time_ms=%.3f\n", acc_126, _41);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: __dt_comp  (&b);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:32:5: missed: not vectorized: statement can throw an exception: resx 11
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: __dt_comp  (&b);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: __dt_comp  (&a);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: missed: statement clobbers memory: __dt_comp  (&a);
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: note: ***** Analysis failed with vector mode V8DI
+/home/runner/work/HFT-programming-hw/HFT-programming-hw/hw13/kernel.cpp:45:1: note: ***** Skipping vector mode V64QI, which would repeat the analysis for V8DI
+/usr/include/c++/13/bits/stl_vector.h:556:7: note: vectorized 0 loops in function.
+/usr/include/c++/13/bits/new_allocator.h:151:48: missed: statement clobbers memory: _33 = operator new (262144);
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Analysis succeeded with vector mode V8DI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node 0x2e3659c8 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)this_1(D)]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	children 0x2e365a48
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node (constant) 0x2e365a48 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 36
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:4: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** The result for vector mode V64QI would be the same
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Re-trying analysis with vector mode V32QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Analysis succeeded with vector mode V32QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node 0x2e365a48 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)this_1(D)]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	children 0x2e365948
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node (constant) 0x2e365948 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 36
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:4: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Re-trying analysis with vector mode V16QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Analysis succeeded with vector mode V16QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node 0x2e365948 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)this_1(D)]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	children 0x2e3659c8
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node (constant) 0x2e3659c8 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	{ 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 36
+  Scalar cost: 32
+/usr/include/c++/13/bits/stl_vector.h:100:4: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Re-trying analysis with vector mode V8QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Analysis succeeded with vector mode V8QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: SLPing BB part
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Costing subgraph: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node 0x2e365948 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: op template: MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 0 MEM[(struct _Vector_impl_data *)this_1(D)]._M_start = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 1 MEM[(struct _Vector_impl_data *)this_1(D)]._M_finish = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	stmt 2 MEM[(struct _Vector_impl_data *)this_1(D)]._M_end_of_storage = 0B;
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	children 0x2e3659c8
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: node (constant) 0x2e3659c8 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: 	{ 0B, 0B, 0B }
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis: 
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: Cost model analysis for part in loop 0:
+  Vector cost: 60
+  Scalar cost: 48
+/usr/include/c++/13/bits/stl_vector.h:100:4: missed: not vectorized: vectorization is not profitable.
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Re-trying analysis with vector mode V4QI
+/usr/include/c++/13/bits/stl_vector.h:100:4: note: ***** Analysis failed with vector mode V4QI
+/usr/include/c++/13/bits/new_allocator.h:172:26: missed: statement clobbers memory: operator delete (_7, _17);
+/usr/include/c++/13/bits/stl_vector.h:738:7: note: ***** Analysis failed with vector mode V8DI
+/usr/include/c++/13/bits/stl_vector.h:738:7: note: ***** Skipping vector mode V64QI, which would repeat the analysis for V8DI
